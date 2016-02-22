@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   
   get '/' => 'home#show'
 
+  get 'home/sign_up'
   
   get 'volunteers/new'
 
