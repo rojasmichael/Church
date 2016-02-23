@@ -7,7 +7,7 @@ class MinistriesController < ApplicationController
         @ministry = Ministry.new(ministry_params)
 
     if @ministry.save
-      redirect_to ministry(@ministry)
+      redirect_to ministry_path(@ministry)
     else
       render :new
     end
