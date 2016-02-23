@@ -1,27 +1,31 @@
 class MinistriesController < ApplicationController
   def new
+     @ministry = Ministry.new
   end
 
   def create
-    @ministry = Ministry.find params[:ministry_id]
-    
+        @ministry = Ministry.new(ministry_params)
 
     if @ministry.save
-        redirect_to action: 'index', controller:
-        'entries', project_id: @project_id
-
+      redirect_to ministry(@ministry)
     else
-        render 'new'
-
+      render :new
     end
   end
+  
 
   def destroy
+
   end
 
   def edit
   end
 
   def show
+    @ministry = Ministry.find(params[:id])
+  end
+
+def ministry_params
+    params.require(:ministry).permit(:name, :address, :phone, :email, :password)
   end
 end

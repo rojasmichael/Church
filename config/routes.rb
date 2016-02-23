@@ -1,40 +1,42 @@
 Rails.application.routes.draw do
-  devise_for :ministries
-  devise_for :volunteers
+
+resources :ministries
+resources :volunteers
+resources :missions
   
   get '/' => 'home#show'
 
   get 'home/sign_up'
   
-  get 'volunteers/new'
+  # get 'volunteers/new'
 
-  get 'volunteers/create'
+  # get 'volunteers/create'
 
-  get 'volunteers/destroy'
+  # get 'volunteers/destroy'
 
-  get 'volunteers/edit'
+  # get 'volunteers/edit'
 
-  get 'volunteers/show'
+  # get 'volunteers/show'
 
-  get 'ministries/new'
+  # get 'ministries/new'
 
-  get 'ministries/create'
+  post '/ministries' => 'ministries#create'
 
-  get 'ministries/destroy'
+  # get 'ministries/destroy'
 
-  get 'ministries/edit'
+  # get 'ministries/edit'
 
-  get 'ministries/show'
+  # get 'ministries/show'
 
-  get 'missions/new'
+  # get 'missions/new'
 
-  get 'missions/create'
+  # get 'missions/create'
 
-  get 'missions/destroy'
+  # get 'missions/destroy'
 
-  get 'missions/edit'
+  # get 'missions/edit'
 
-  get 'missions/show'
+  # get 'missions/show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

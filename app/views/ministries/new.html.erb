@@ -1,2 +1,36 @@
-<h1>Ministries#new</h1>
-<p>Find me in app/views/ministries/new.html.erb</p>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ministry Profile Page</title>
+</head>
+<body>
+
+<h1>Ministry Name: <%= @ministry.name %></h1>
+
+<dl>
+  <dt>
+    Address
+  </dt>
+  <dd>
+    <%= @ministry.address %>
+  </dd>
+
+  <dt>
+    Email
+  </dt>
+  <dd>
+    <%= @ministry.email %>
+  </dd>
+
+  <dt>
+    Phone
+  </dt>
+  <dd>
+    $<%= @ministry.phone %>
+  </dd>
+</dl>
+
+
+
+</body>
+</html>

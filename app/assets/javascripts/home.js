@@ -2,7 +2,7 @@
 // All this logic will automatically be available in application.js.
 $(document).on("ready", function() {
 	$("#radio_volunteer").on("click", function(){
-		$(".form1").attr('action', '/volunteers/new');
+		$(".form1").attr('action', '/volunteers');
 		$("#InputName").prop('name', 'volunteer[name]');
 		$("#InputAddress").prop('name','volunteer[address]');
 		$("#InputPhone").prop('name','volunteer[phone]');
@@ -10,7 +10,7 @@ $(document).on("ready", function() {
 		$("#InputPassword").prop('name','volunteer[password]');
     });
     $('#radio_ministry').on("click", function(){
-    	$(".form1").attr("action", "/ministries/new");
+    	$(".form1").attr("action", "/ministries");
     	$("#InputName").prop('name', 'ministry[name]');
 		$("#InputAddress").prop('name','ministry[address]');
 		$("#InputPhone").prop('name','ministry[phone]');
