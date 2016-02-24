@@ -1,0 +1,36 @@
+<title>Volunteer Profile Page via Index HTML IN Volunteers</title>
+</head>
+<body>
+
+<h1>Volunteer Name: <%= @volunteer.name %></h1>
+<h2>This the index html for volunteers<h2>
+<dl>
+  <dt>
+    Address
+  </dt>
+  <dd>
+    <%= @volunteer.address %>
+  </dd>
+
+  <dt>
+    Email
+  </dt>
+  <dd>
+    <%= @volunteer.email %>
+  </dd>
+
+  <dt>
+    Phone
+  </dt>
+  <dd>
+<%= image_tag @volunteer.avatar.url %>
+<%= image_tag @volunteer.avatar.url(:medium) %>
+<%= image_tag @volunteer.avatar.url(:thumb) %>
+
+ <%= link_to "Log out", "/volunteers/:id", :method => :delete %>
+
+<p>To Create a Missions Click Here</p>
+ <button onclick="location.href='/missions/new';">Missions</button>
+  
+  </dd>
+</dl>

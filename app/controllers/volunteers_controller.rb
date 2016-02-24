@@ -1,4 +1,9 @@
 class VolunteersController < ApplicationController
+  def index
+   @volunteer = Volunteer.find_by(id: session[:volunteer_id])
+  end
+
+
   def new
     @volunteer = Volunteer.new
   end
@@ -25,7 +30,7 @@ class VolunteersController < ApplicationController
   end
 
   def show
-    @volunteer = Volunteer.find_by(id: params[:id])
+    @volunteer = Volunteer.find(params[:id])
   end
 
   private
