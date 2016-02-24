@@ -13,3 +13,15 @@ body { padding-top: 60px; }
 // And finally bootswatch style itself
 @import "bootswatch/cerulean/bootswatch";
 
+// Importing home.scss for styling connection
+@import "home.scss";
+
+// Importing ministries.scss for styling connection
+@import "ministries.scss";
+
+// Importing missions.scss for styling connection
+@missions.scss
+
+// Importing volunteers.scss for styling connection
+@volunteers.scss
+

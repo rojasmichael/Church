@@ -1,5 +1,8 @@
 class HomeController < ApplicationController
+	def index
+	end
 
+	
 	def show
 
 	end
@@ -10,27 +13,21 @@ class HomeController < ApplicationController
 
 
 	def create 
-	# 	 user_params = params.require(:barbecue).permit(:title, :venue, :date)
-	# 	 if 
- #    	@user = Ministry.new(Ministry_params)
+	  	@volunteer = Volunteer.find_by(email: params[:email])
+	  	@ministry = Ministry.find_by(email: params[:email])
 
- #    else 
- #    	@user = Volunteer.new(Volunteer_params)
+	  	if @volunteer && @volunteer.authenticate(params[:password])
+	  		session[:volunteer_id] = @volunteer.id
+	  		redirect_to '/volunteers/'
+	  	elsif @minsitry && @ministry.authenticate(params[:password])
+	  		session[:ministry_id] = @minsitry.id
+	  		redirect_to '/ministries/'
+	  	else
+	  		flash[:alert] = "Login Failed"
+			redirect_to '/home/login'
+		end
+	end 
 
-    
- #      	render(:new)
- #    	else
- #      	redirect_to(barbecues_path)
- #    end
-	# end
 
-	# private
-
-	# def user_params
-	#   params.require(:ministry)
-	#     .permit(:name, :bread_type)
-	# end
-
-end
 
 end

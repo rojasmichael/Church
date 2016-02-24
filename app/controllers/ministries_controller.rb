@@ -9,13 +9,15 @@ class MinistriesController < ApplicationController
     if @ministry.save
       redirect_to ministry_path(@ministry)
     else
-      render :new
+      redirect_to '/home/sign_up'
     end
   end
   
 
   def destroy
+    session.clear
 
+    redirect_to '/'
   end
 
   def edit

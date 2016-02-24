@@ -3,12 +3,12 @@ class MissionsController < ApplicationController
   end
 
   def create
-      @Mission = Mission.new(mission_params)
+      @mission = Mission.new(mission_params)
 
     if @mission.save
       redirect_to mission_path(@mission)
     else
-      render :new
+      render :new 
     end
   end
 

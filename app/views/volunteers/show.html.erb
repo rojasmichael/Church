@@ -26,6 +26,11 @@
     Phone
   </dt>
   <dd>
+<%= image_tag @volunteer.avatar.url %>
+<%= image_tag @volunteer.avatar.url(:medium) %>
+<%= image_tag @volunteer.avatar.url(:thumb) %>
+
+ <%= link_to "Log out", "/ministries/:id", :method => :delete %>
   
   </dd>
 </dl>

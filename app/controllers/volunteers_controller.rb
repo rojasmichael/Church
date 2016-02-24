@@ -7,26 +7,31 @@ class VolunteersController < ApplicationController
       @volunteer = Volunteer.new(volunteer_params)
 
     if @volunteer.save
+
       redirect_to volunteer_path(@volunteer)
     else
-      render :new
+       p @volunteer.errors.full_messages
+      redirect_to '/home/sign_up'
     end
   end
 
   def destroy
+    session.clear
+
+    redirect_to '/'
   end
 
   def edit
   end
 
   def show
-    @volunteer = Volunteer.find(params[:id])
+    @volunteer = Volunteer.find_by(id: params[:id])
   end
 
   private
 
   def volunteer_params
-    params.require(:volunteer).permit(:name, :address, :email, :password)
+    params.require(:volunteer).permit(:name, :address, :email, :password, :phone )
   end
 
 end

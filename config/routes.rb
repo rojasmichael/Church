@@ -7,7 +7,12 @@ resources :missions
   get '/' => 'home#show'
 
   get 'home/sign_up'
-  
+
+  get 'home/login'
+
+  post 'home/login' => 'home#create'
+
+ 
   # get 'volunteers/new'
 
   # get 'volunteers/create'
