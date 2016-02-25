@@ -1,15 +1,15 @@
 class MissionsController < ApplicationController
   def new
-    
+
   end
 
   def create
-      @mission = Mission.new(mission_params)
+      @missions = Mission.new(mission_params)
 
-    if @mission.save
-      redirect_to mission_path(@mission)
+    if @missions.save
+      redirect_to mission_path(@missions)
     else
-      render :new 
+      render :new   
     end
   end
 
@@ -20,10 +20,14 @@ class MissionsController < ApplicationController
   end
 
   def show
+     @missions = Mission.find(params[:id])
   end
 
   private
   def mission_params
+
+    params.require(:mission).permit(:name, :location, :description )
+
   end
 
 end

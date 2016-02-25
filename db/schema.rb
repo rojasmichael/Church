@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160224165109) do
+ActiveRecord::Schema.define(version: 20160225194220) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,9 @@ ActiveRecord::Schema.define(version: 20160224165109) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.string   "password_digest"
+    t.integer  "volunteer_id"
+    t.integer  "mission_id"
+    t.integer  "mission_assignment_id"
   end
 
   add_index "ministries", ["email"], name: "index_ministries_on_email", unique: true, using: :btree
@@ -47,15 +50,21 @@ ActiveRecord::Schema.define(version: 20160224165109) do
   create_table "mission_assignments", force: :cascade do |t|
     t.integer  "mission_id"
     t.integer  "ministry_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "volunteer_id"
   end
 
   create_table "missions", force: :cascade do |t|
     t.integer  "church_id"
     t.integer  "volunteer_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.string   "name"
+    t.string   "location"
+    t.text     "description"
+    t.integer  "ministry_id"
+    t.integer  "mission_assignment_id"
   end
 
   create_table "volunteers", force: :cascade do |t|
@@ -81,6 +90,9 @@ ActiveRecord::Schema.define(version: 20160224165109) do
     t.datetime "avatar_updated_at"
     t.string   "phone"
     t.string   "password_digest"
+    t.integer  "ministry_id"
+    t.integer  "mission_id"
+    t.integer  "mission_assignment_id"
   end
 
   add_index "volunteers", ["email"], name: "index_volunteers_on_email", unique: true, using: :btree

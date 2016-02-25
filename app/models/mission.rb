@@ -1,6 +1,6 @@
 class Mission < ActiveRecord::Base
 	
-	has_many :volunteers
-	has_many :ministries, through: :mission_assignments
+	
+	has_many :mission_assignments
 	
 end
