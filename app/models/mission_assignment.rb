@@ -1,5 +1,5 @@
 class MissionAssignment < ActiveRecord::Base
-	belongs_to :missions
-	belongs_to :volunteers
-	belongs_to :ministries
+	belongs_to :mission
+	belongs_to :volunteer
+	belongs_to :ministry
 end

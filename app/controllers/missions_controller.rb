@@ -1,5 +1,12 @@
 class MissionsController < ApplicationController
+  def index
+    @missions = Mission.all
+  end
+
+
   def new
+    @missions = Mission.new
+    
 
   end
 
@@ -19,8 +26,20 @@ class MissionsController < ApplicationController
   def edit
   end
 
+  def add_vol
+    @missions = Mission.find(params[:id])
+     @volunteer = Volunteer.find_by(id: session[:volunteer_id])
+     @missions.volunteers.push(@volunteer)
+  
+   
+     redirect_to mission_path
+
+  end
+
   def show
      @missions = Mission.find(params[:id])
+     @volunteer = Volunteer.find_by(id: session[:volunteer_id])
+
   end
 
   private

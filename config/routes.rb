@@ -12,6 +12,8 @@ resources :missions
 
   post 'home/login' => 'home#create'
 
+  post 'missions/:id/volunteers' => 'missions#add_vol'
+
  
   # get 'volunteers/new'
 
