@@ -14,6 +14,8 @@ resources :missions
 
   post 'missions/:id/volunteers' => 'missions#add_vol'
 
+  post 'missions/:id/ministries' => 'missions#add_min'
+
  
   # get 'volunteers/new'
 

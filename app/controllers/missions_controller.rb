@@ -36,9 +36,20 @@ class MissionsController < ApplicationController
 
   end
 
+  def add_min
+  @missions = Mission.find(params[:id])
+  @ministry = Ministry.find_by(id: session[:ministry_id])
+  @missions.ministries.push(@ministry)
+  
+   
+     redirect_to mission_path
+  end
+
+
   def show
      @missions = Mission.find(params[:id])
      @volunteer = Volunteer.find_by(id: session[:volunteer_id])
+     @ministry = Ministry.find_by(id: session[:ministry_id])
 
   end
 

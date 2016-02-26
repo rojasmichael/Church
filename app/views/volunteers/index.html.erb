@@ -34,3 +34,15 @@
   
   </dd>
 </dl>
+<%=form_tag volunteers_path, :method => 'get' do %>
+<p>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search", :name => nil %>
+</p>
+<%end%>
+<% if @volunteers.present?%>
+   <% @volunteers.each do |volunteer|%>
+   <%=volunteer.name%>
+   
+   <% end %>
+<% end %>

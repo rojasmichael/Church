@@ -1,7 +1,7 @@
 class MinistriesController < ApplicationController
   
   def index
-    @ministry = Ministry.find_by(id: session[:volunteer_id])
+    @ministry = Ministry.find_by(id: session[:ministry_id])
   end
 
   def new

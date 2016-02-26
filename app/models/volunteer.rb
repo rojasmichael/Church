@@ -8,6 +8,14 @@ class Volunteer < ActiveRecord::Base
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
   has_secure_password
 
+ def self.search(search)
 
+ 	if search
+ 		where('name LIKE ?', "%#{search}")
+ 	else
+ 		all
+ 	end
+
+ end
 
 end

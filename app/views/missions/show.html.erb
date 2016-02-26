@@ -9,17 +9,34 @@
 <button action="submit">Invite Friends</button>
 <button onclick="location.href='/missions';">Missions List</button>
 
+
 <form action="/missions/<%= @missions.id %>/volunteers" method="POST">
+<p>Volunteers Join Here</p>
 	<button type="submit">Join Mission</button>
 <input type="hidden" name="authenticity_token"
       value="<%= form_authenticity_token %>">
 </form>
 
+<form action="/missions/<%= @missions.id %>/ministries" method="POST">
+<p>Ministries Join Here</p>
+	<button type="submit">Join Mission</button>
+<input type="hidden" name="authenticity_token"
+      value="<%= form_authenticity_token %>">
+</form>
 <h3>People Already In <%=@missions.name %></h3>
 <% @missions.volunteers.each do | volunteer | %>
 	<li>
 		
 			<%= volunteer.name %><br>
+		</li>
+
+	<% end %>
+</ul>
+<h3>Ministry Already In <%=@missions.name %></h3>
+<% @missions.ministries.each do | ministry | %>
+	<li>
+		
+			<%= ministry.name %><br>
 		</li>
 
 	<% end %>

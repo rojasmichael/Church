@@ -19,8 +19,8 @@ class HomeController < ApplicationController
 	  	if @volunteer && @volunteer.authenticate(params[:password])
 	  		session[:volunteer_id] = @volunteer.id
 	  		redirect_to '/volunteers/'
-	  	elsif @minsitry && @ministry.authenticate(params[:password])
-	  		session[:ministry_id] = @minsitry.id
+	  	elsif @ministry && @ministry.authenticate(params[:password])
+	  		session[:ministry_id] = @ministry.id
 	  		redirect_to '/ministries/'
 	  	else
 	  		flash[:alert] = "Login Failed"
