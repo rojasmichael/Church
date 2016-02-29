@@ -2,21 +2,36 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.vidhome2{ 
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -100;
-    transform: translateX(-50%) translateY(-50%);
- background: url('//demosthenes.info/assets/images/polina.jpg') no-repeat;
-  background-size: cover;
-  transition: 1s opacity;
+.pic1{position:absolute;z-index:-100;left:0;top:0;height:100%;width:100%}
+.text_home{z-index:10; color:white; 
+position: absolute; top: 30%; 
+left:20%;
+-webkit-transform: translateY(-50%);
+ -ms-transform: translateY(-50%);
+ transform: translateY(-50%);
+font-size: 40px;}
+.navbar {
+   background-color: transparent;
+   background: transparent;
+   border-color: transparent;
+   z-index: 10;
 }
 
-.vidhome {
-	width: 50%;
+.bt-1{ background-color: transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    color:white;} 
+
+.form2{
+    width: 300px;
+    margin: 0 auto;
+    
+
+
 }
+
+
+
