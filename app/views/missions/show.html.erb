@@ -15,10 +15,9 @@
     </div>
 
 
-<h1><%= @missions.name %></h1>
-<h2><%= @missions.location %></h2>
-<h2><%= @missions.description %></h2>
-
+<h1 class="tlt">Mission Name: <%= @missions.name %></h1>
+<h2 class="tlt">Mission Location: <%= @missions.location %></h2>
+<h2 class="tlt">Mission Description: <%= @missions.description %></h2>
 
 
 <button onclick="location.href='/missions';">Missions List</button>
@@ -38,20 +37,57 @@
       value="<%= form_authenticity_token %>">
 </form>
 <h3>People Already In <%=@missions.name %></h3>
-<% @missions.volunteers.each do | volunteer | %>
-	<li>
-		
-			<%= volunteer.name %><br>
-		</li>
 
-	<% end %>
-</ul>
+<table class="table">
+  <thead class="thead-inverse">
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Address</th>
+    </tr>
+  </thead>
+  <tbody>
+
+<% @missions.volunteers.each do | volunteer | %>
+	
+
+ <tr>
+      <td scope="row"><%=volunteer.id %></th>
+      <td><%=volunteer.name %></td>
+      <td><%=volunteer.email %></td>
+      <td><%=volunteer.address %></td>
+<!-- 		<%= volunteer.name %><br> -->
+</tr>
+<% end %>
+</tbody>
+
+		
+</table>
+	
+  <table class="table">
+  <thead class="thead-inverse">
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Address</th>
+    </tr>
+  </thead>
+  <tbody>
+
 <h3>Ministry Already In <%=@missions.name %></h3>
 <% @missions.ministries.each do | ministry | %>
-	<li>
-		
-			<%= ministry.name %><br>
-		</li>
+	
+ <tr>
+      <td scope="row"><%=volunteer.id %></th>
+      <td><%=ministry.name %></td>
+      <td><%=ministry.email %></td>
+      <td><%=ministry.address %></td>
+<!--    <%= volunteer.name %><br> -->
+</tr>
+<% end %>
+</tbody>
 
-	<% end %>
-</ul>
+    
+</table>

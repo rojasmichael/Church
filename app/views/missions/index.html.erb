@@ -1,12 +1,30 @@
-<h1><%= @missions.name %></h1>
+<h1>Mission List</h1>
 
+<table class="table table-inverse">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Mission Name</th>
+      <th>Mission Location</th>
+      <th>Mission Description</th>
+      <th>Mission Link</th>
+      <th>Mission Edit</th>
+    </tr>
+  </thead>
 
-<ul>
 <% @missions.each  do |mission| %>
+	 <tr>
+      <td scope="row"><%=mission.id %></th>
+      <td><%=mission.name %></td>
+      <td><%=mission.location %></td>
+      <td><%=mission.description %></td>
+      <td><%=link_to"Go to this Mission", mission_path(mission)%></td>
+      <td><%=link_to"Edit Link", edit_mission_path(mission)%></td>
 
-	<li><%= "#{mission.name} #{mission.location} #{mission.description}" %></li>
-	<%=link_to"Edit Link", edit_mission_path(mission)%>
-	<%=link_to"Go to this Mission", mission_path(mission)%>
-	
+
+</tr>
 <% end %>
-</ul>
+</tbody>
+
+		
+</table>
