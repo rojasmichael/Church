@@ -10,6 +10,7 @@ $(document).on("ready", function() {
 		$("#InputPassword").prop('name','volunteer[password]');
 		$("#InputPasswordConfirmation").prop('name','volunteer[password_confirmation]');
 		// $("#InputPicture").prop('name','volunteer[avatar_file_name]')
+		console.log("volunteer")
     });
     $('#radio_ministry').on("click", function(){
     	$(".form1").attr("action", "/ministries");
