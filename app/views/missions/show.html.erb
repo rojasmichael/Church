@@ -1,7 +1,21 @@
-<h1>Missions#show</h1>
-<p>Find me in app/views/missions/show.html.erb</p>
+<nav class="container-fluid">
+    <div class="navbar-header navbar-fixed-top" style="background: rgba(0, 0, 0, 0.8);">
+      <a class="navbar-brand" href="#">
+       <p>Mission Church</p>
+      </a>
+      <div class="pull-right">
+        <div class="btn-group" role="group">
+          <!-- <button class="btn navbar-btn" onclick="location.href='home/sign_up';">Sign In</button> -->
+        </div>
+        <div class="btn-group" role="group">
+          <!-- <button class="btn navbar-btn" onclick="location.href='home/login';">Log In</button> -->
+           <%= link_to "Log out", "/volunteers/:id", :method => :delete, :class => "btn navbar-btn" %>
+        </div>
+      </div>
+    </div>
 
-<h2><%= @missions.name %></h2>
+
+<h1><%= @missions.name %></h1>
 <h2><%= @missions.location %></h2>
 <h2><%= @missions.description %></h2>
 

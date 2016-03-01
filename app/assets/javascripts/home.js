@@ -20,5 +20,7 @@ $(document).on("ready", function() {
 		$("#InputPassword").prop('name','ministry[password]');
 		$("#InputPasswordConfirmation").prop('name','ministry[password_confirmation]');
     });
-   
+  $(function () {
+    $('.tlt').textillate();
+}); 
 });

@@ -1,33 +1,49 @@
 <title>Volunteer Profile Page via Index HTML IN Volunteers</title>
-</head>
+
 <body>
 
+<nav class="container-fluid">
+    <div class="navbar-header navbar-fixed-top" style="background: rgba(0, 0, 0, 0.8);">
+      <a class="navbar-brand" href="#">
+       <p>Mission Church</p>
+      </a>
+      <div class="pull-right">
+        <div class="btn-group" role="group">
+          <!-- <button class="btn navbar-btn" onclick="location.href='home/sign_up';">Sign In</button> -->
+        </div>
+        <div class="btn-group" role="group">
+          <!-- <button class="btn navbar-btn" onclick="location.href='home/login';">Log In</button> -->
+           <%= link_to "Log out", "/volunteers/:id", :method => :delete, :class => "btn navbar-btn" %>
+        </div>
+      </div>
+    </div>
+  
+
+  
+</nav>
+
+<div class="container">
+    <div class="fb-profile">
+        <img align="left" class="fb-image-lg" src="/assets/barn_1470.jpg" alt="Profile image example"/>
+        <img align="left" class="fb-image-profile thumbnail" src="/assets/profile_pic1" alt="Profile image example"/>
+        <div class="fb-profile-text">
+          <h2>Hello: <%= @volunteer.name %></h2>
+          <p> Address: <%= @volunteer.address %></p>
+          <p> Email: <%= @volunteer.email %></p>
+          <p> Volunteer at ABC Church </p>
 
 
-<h2>Hello: <%= @volunteer.name %></h2>
-
-<dl>
-  <dt>
-    Address
-  </dt>
-  <dd>
-    <%= @volunteer.address %>
-  </dd>
-
-  <dt>
-    Email
-  </dt>
-  <dd>
-    <%= @volunteer.email %>
-  </dd>
-
-  <dt>
-    Phone
-  </dt>
-  <dd>
 
 
- <%= link_to "Log out", "/volunteers/:id", :method => :delete %>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container">
+
+
 
 <p>To Create a Missions Click Here</p>
  <button onclick="location.href='/missions/new';">Missions</button>
@@ -46,3 +62,4 @@
    
    <% end %>
 <% end %>
+</div>

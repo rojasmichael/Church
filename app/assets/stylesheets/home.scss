@@ -2,7 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.pic1{position:absolute;z-index:-100;left:0;top:0;height:100%;width:100%}
+/*.pic1{position:absolute;z-index:-100;left:0;top:0;height:100%;width:100%}*/
+.pic1{position:absolute;z-index:-100;left:0;top:0;height:100%;width:100%;}
+ 
+.bg-black {background-color: #000;}
 .text_home{z-index:10; color:white; 
 position: absolute; top: 30%; 
 left:20%;
@@ -28,9 +31,13 @@ font-size: 40px;}
 .form2{
     width: 300px;
     margin: 0 auto;
-    
+    position: absolute; top: 0; left: 40%;
+}
 
-
+.form1{
+    width: 300px;
+    margin: 0 auto;
+   
 }
 
 

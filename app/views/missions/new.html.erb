@@ -1,15 +1,39 @@
-<h1>Missions#new</h1>
+<nav class="container-fluid">
+    <div class="navbar-header navbar-fixed-top" style="background: rgba(0, 0, 0, 0.8);">
+      <a class="navbar-brand" href="#">
+       <p>Mission Church</p>
+      </a>
+      <div class="pull-right">
+        <div class="btn-group" role="group">
+          <!-- <button class="btn navbar-btn" onclick="location.href='home/sign_up';">Sign In</button> -->
+        </div>
+        <div class="btn-group" role="group">
+          <!-- <button class="btn navbar-btn" onclick="location.href='home/login';">Log In</button> -->
+           <%= link_to "Log out", "/volunteers/:id", :method => :delete, :class => "btn navbar-btn" %>
+        </div>
+      </div>
+    </div>
+
 <p>Find me in app/views/missions/new.html.erb</p>
 
+<div class="center_div">
 <form action="/missions" method="POST">
-	<label> Name</label>
+	<div class="form-group">
+	<label> Mission Name</label>
 	<input type= "text" placholder="Mission Name" name="mission[name]"></input>
-	<label>Location</label>
+	</div>
+	<div class="form-group">
+	<label>Missio  Location</label>
 	<input type="text" placeholder="location" name="mission[location]"></input>
-	<label>Description</label>
-	<input type="text" placeholder="Description" name="mission[description]"></input>
+	</div>
+	<div class="form-group">
+	<label>Mission Description</label>
+	<textarea type="text" placeholder="Description" name="mission[description]"></textarea>
 	<input type="hidden" name="authenticity_token"
       value="<%= form_authenticity_token %>">
+      </div>
 <button type="submit" class="btn btn-default" id="button2">Create</button>
 
 </form>
+
+</div>
