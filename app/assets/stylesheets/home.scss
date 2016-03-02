@@ -4,12 +4,14 @@
 
 /*.pic1{position:absolute;z-index:-100;left:0;top:0;height:100%;width:100%}*/
 .pic1{position:absolute;z-index:-100;left:0;top:0;height:100%;width:100%;}
+/*.pic2{position:absolute;z-index:-100;left:0;top:100px;height:100%;width:100%;}*/
 
-.body1 { 
+body.c-home.a-sign_up { 
     background-image: url('/assets/Jesus_cross_mountain.jpeg');
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center; 
+   /*background-attachment: fixed;*/
+    background-position: center;
+    background-size: cover;
 }
  
 .bg-black {background-color: #000;}
@@ -44,7 +46,7 @@ font-size: 40px;}
 .form1{
     width: 300px;
     margin: 0 auto;
-   
+    color: black;
 }
 
 
