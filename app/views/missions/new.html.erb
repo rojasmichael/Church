@@ -14,26 +14,31 @@
       </div>
     </div>
 
-<p>Find me in app/views/missions/new.html.erb</p>
 
-<div class="center_div">
-<form action="/missions" method="POST">
-	<div class="form-group">
-	<label> Mission Name</label>
-	<input type= "text" placholder="Mission Name" name="mission[name]"></input>
-	</div>
-	<div class="form-group">
-	<label>Missio  Location</label>
-	<input type="text" placeholder="location" name="mission[location]"></input>
-	</div>
-	<div class="form-group">
-	<label>Mission Description</label>
-	<textarea type="text" placeholder="Description" name="mission[description]"></textarea>
-	<input type="hidden" name="authenticity_token"
+</div>
+
+<div class="container">
+    <div class="row">
+    <form action="/missions" method="POST"  role="form" class="col-md-9 go-right">
+      <h2>Create a New Mission</h2>
+      <div class="form-group">
+      <input name="mission[name]" type="text" class="form-control" required>
+      <label for="Mission Name">Mission Name</label>
+    </div>
+    <div class="form-group">
+      <input name="mission[location]" type="text" class="form-control" required>
+      <label for="location">Mission Location</label>
+    </div>
+    <div class="form-group">
+      <textarea name="mission[description]" class="form-control" required></textarea>
+      <label for="description">Description</label>
+    </div>
+    <input type="hidden" name="authenticity_token"
       value="<%= form_authenticity_token %>">
-      </div>
+      
 <button type="submit" class="btn btn-default" id="button2">Create</button>
-
-</form>
-
+    </div>
+    </form>
+        
+  </div>
 </div>
