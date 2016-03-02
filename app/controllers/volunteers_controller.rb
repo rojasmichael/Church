@@ -1,7 +1,8 @@
 class VolunteersController < ApplicationController
   def index
    @volunteer = Volunteer.find_by(id: session[:volunteer_id])
-   @volunteers = Volunteer.search(params[:search])
+   # @volunteers = Volunteer.search(params[:search])
+   render :show
   end
 
 
