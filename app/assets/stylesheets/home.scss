@@ -4,6 +4,13 @@
 
 /*.pic1{position:absolute;z-index:-100;left:0;top:0;height:100%;width:100%}*/
 .pic1{position:absolute;z-index:-100;left:0;top:0;height:100%;width:100%;}
+
+.body1 { 
+    background-image: url('/assets/Jesus_cross_mountain.jpeg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+}
  
 .bg-black {background-color: #000;}
 .text_home{z-index:10; color:white; 
