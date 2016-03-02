@@ -24,7 +24,22 @@ class MissionsController < ApplicationController
   end
 
   def edit
+    @missions = Mission.find(params[:id])
+
   end
+
+  def update
+    @missions = Mission.find(params[:id])
+    if @missions.update(mission_params)
+    flash[:notice] = 'Mission was successfully updated.' 
+    redirect_to mission_path
+
+  else 
+    render "edit"
+
+  end 
+  end
+
 
   def add_vol
     @missions = Mission.find(params[:id])
