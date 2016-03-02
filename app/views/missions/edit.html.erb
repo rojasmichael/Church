@@ -3,3 +3,16 @@
 <h2>Mission Location: <%= @missions.location %></h2>
 <h2>Mission Description: <%= @missions.description %></h2>
 
+<%= form_for @missions do |f| %>
+	<%= f.label :missions_name %>:
+	<%= f.text_field :name %>
+
+<%= f.label :missions_location %>:
+<%= f.text_field :location %>
+
+<%= f.label :missions_description %>:
+<%= f.text_field :description %>
+
+<%= f.submit %>
+
+<% end %>
